@@ -7,16 +7,16 @@
   <body>
     <h1>FizzBuzz問題</h1>
     <label>FizzNum:</label>
-    <input type="text" id="input_num1" placeholder="整数値を入力して下さい" value="" ><br>
+    <input type="text" id="input_num1" placeholder='整数値を入力して下さい' value="" ><br>
     <label>BuzzNum:</label>
-    <input type="text" id="input_num2" placeholder="整数値を入力して下さい" value="" ><br>
+    <input type="text" id="input_num2" placeholder='整数値を入力して下さい' value="" ><br>
     <input type="button" onclick="inputNum()" value="実行">
     <div id="output_message">[出力]</div>
     <script language="javascript" type="text/javascript">
     function numFizzBizz(input_num1,input_num2){
       if(!input_num1 || !input_num2){
         const p = document.createElement('p');
-        p.textContent = "整数値を入力して下さい";
+        p.textContent = '整数値を入力して下さい';
         document.getElementById("output_message").appendChild( p );
       }else if((Number.isInteger(input_num1/1)) && (Number.isInteger(input_num2/1))){
         for ( sum = 1; sum <= 99; sum++) {
@@ -34,7 +34,7 @@
         }
       }else{
         const p = document.createElement('p');
-        p.textContent = "整数値を入力して下さい";
+        p.textContent = '整数値を入力して下さい';
         document.getElementById("output_message").appendChild( p );
       }
     } 
