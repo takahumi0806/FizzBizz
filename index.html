@@ -14,7 +14,7 @@
     <p>[出力]</p>
     <div id="output_message"></div>
     <script language="javascript" type="text/javascript">
-    function numFizzBizz(input_num1,input_num2){
+    function numFizzBuzz(input_num1,input_num2){
       if (!input_num1 || !input_num2){
         errorNum();
       } else if ((Number.isInteger(input_num1/1)) && (Number.isInteger(input_num2/1))){
@@ -48,7 +48,7 @@
       element.innerHTML = '';
       const input_num1 = document.getElementById("input_num1").value;
       const input_num2 = document.getElementById("input_num2").value;
-      numFizzBizz(input_num1,input_num2)
+      numFizzBuzz(input_num1,input_num2)
     });
     </script>
   </body>
