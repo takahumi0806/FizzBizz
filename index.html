@@ -10,7 +10,7 @@
     <input type="text" id="input_num1" placeholder='整数値を入力して下さい' value="" ><br>
     <label>BuzzNum:</label>
     <input type="text" id="input_num2" placeholder='整数値を入力して下さい' value="" ><br>
-    <input type="button" id="buttonnum" value="実行">
+    <input type="button" id="buttonnum" value='実行'>
     <p>[出力]</p>
     <div id="output_message"></div>
     <script language="javascript" type="text/javascript">
@@ -18,15 +18,15 @@
       if (!input_num1 || !input_num2){
         errorNum();
       } else if ((Number.isInteger(input_num1/1)) && (Number.isInteger(input_num2/1))){
-        for ( sum = 1; sum <= 99; sum++) {
+        for (sum = 1; sum <= 99; sum++) {
           const p = document.createElement('p');
           if (sum % input_num1==0 && sum % input_num2==0){
             p.textContent = `FizzBuzz ${sum}`;
             document.getElementById("output_message").appendChild( p );
-          } else if ( sum % input_num1 == 0){
+          } else if (sum % input_num1 == 0){
             p.textContent = `Fizz ${sum}`;
             document.getElementById("output_message").appendChild( p );
-          } else if ( sum % input_num2 == 0){
+          } else if (sum % input_num2 == 0){
             p.textContent = `Buzz ${sum}`;
             document.getElementById("output_message").appendChild( p );
           } 
