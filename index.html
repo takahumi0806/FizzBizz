@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>javascriptの練習</title>
+  </head>
+  <body>
+    <h1>FizzBuzz問題</h1>
+    <label>FizzNum:</label>
+    <input type="text" id="input_num1" placeholder='整数値を入力して下さい' value="" ><br>
+    <label>BuzzNum:</label>
+    <input type="text" id="input_num2" placeholder='整数値を入力して下さい' value="" ><br>
+    <input type="button" id="buttonnum" value='実行'>
+    <p>[出力]</p>
+    <div id="output_message"></div>
+    <script language="javascript" type="text/javascript">
+    function numFizzBuzz(input_num1,input_num2){
+      if (!input_num1 || !input_num2){
+        errorNum();
+      } else if ((Number.isInteger(input_num1/1)) && (Number.isInteger(input_num2/1))){
+        for (sum = 1; sum <= 99; sum++) {
+          const p = document.createElement('p');
+          if (sum % input_num1==0 && sum % input_num2==0){
+            p.textContent = `FizzBuzz ${sum}`;
+            document.getElementById("output_message").appendChild( p );
+          } else if (sum % input_num1 == 0){
+            p.textContent = `Fizz ${sum}`;
+            document.getElementById("output_message").appendChild( p );
+          } else if (sum % input_num2 == 0){
+            p.textContent = `Buzz ${sum}`;
+            document.getElementById("output_message").appendChild( p );
+          } 
+        }
+      } else {
+        errorNum();
+      }
+    } 
+
+    function errorNum(){
+      const p = document.createElement('p');
+      p.textContent = '整数値を入力して下さい';
+      document.getElementById("output_message").appendChild( p );
+    }
+
+    const button = document.getElementById("buttonnum");
+    button.addEventListener("click", event => {
+      const element = document.getElementById("output_message")
+      element.innerHTML = '';
+      const input_num1 = document.getElementById("input_num1").value;
+      const input_num2 = document.getElementById("input_num2").value;
+      numFizzBuzz(input_num1,input_num2)
+    });
+    </script>
+  </body>
 </html>
